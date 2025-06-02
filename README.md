@@ -29,4 +29,47 @@ This project is a server-side application built entirely in **C# within Unity**,
 ---
 
 ## 📂 Project Structure (Server Scripts)
+# This is just a sample structure
+/Assets/Scripts/Server
+│
+├── MongoDBHandler.cs // Manages DB connection
+├── Player.cs // Player model
+├── AuthManager.cs // Login, register, guest login
+├── InventoryManager.cs // Inventory CRUD operations
+├── ShopManager.cs // Buy/apply items logic
+├── DnaManager.cs // DNA currency management
+├── BanManager.cs // Ban system logic
+└── Utility.cs // Reusable helper methods
 
+---
+
+## 🔧 Setup Instructions
+
+### 1. 🧱 Requirements
+
+- Unity 2021+ (or newer)
+- MongoDB Atlas account (or local MongoDB instance)
+- Internet access (if using MongoDB Atlas)
+- Official MongoDB C# Driver:
+  - Install via NuGet (recommended via external .NET project) or
+  - Manually import `MongoDB.Driver.dll` and dependencies
+
+### 2. 🗃️ MongoDB Setup
+
+Create a collection named `Players` in your MongoDB. Sample document schema:
+
+```json
+{
+  "_id": "player123",
+  "Username": "user",
+  "ShaPassword": "hashed_pass",
+  "GameName": "CoolPlayer",
+  "DnaCount": 1000,
+  "IsBanned": false,
+  "Inventory": {
+    "Background": [],
+    "Sound": [],
+    "SoundEffect": []
+  },
+  "AppliedBackground": "Default"
+}
